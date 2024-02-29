@@ -2,7 +2,6 @@ void async function LinkResolver(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
   }
-  globalThis.hostList = ['www.wsj.com'];
       declare(() => {
         swapText('wall street journal','Financial Journal');
         swapText('wallstreet journal','Financial Journal');
