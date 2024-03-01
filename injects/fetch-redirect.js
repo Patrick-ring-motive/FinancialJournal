@@ -3,6 +3,7 @@ globalThis.fetchRedirects=[
   ['https://www.wsj.com','https://financial.patrickring.net'],
   ['https://wsjstream.wsj.net','https://stream-financial.patrickring.net']
 ];
+globalThis.fetchSkips=["https://ct.pinterest.com"];
 if(!globalThis.nativeFetch){
   globalThis.nativeFetch=globalThis.fetch;
   globalThis.fetch=async function(){
@@ -15,6 +16,17 @@ if(!globalThis.nativeFetch){
       }else{
         if(`${args[0].url}`.startsWith(fetchRedirects[i][0])){
           args[0]=new Request(`${args[0].url}`.replace(fetchRedirects[i][0],fetchRedirects[i][1]),args[0]);
+        }
+      }
+    }
+    for(let i=0;i<fetchSkips.length;i++){    
+      if(typeof args[0] == 'string'){
+        if(args[0].startsWith(fetchSkips[i])){
+          return new Response('');
+        }
+      }else{
+        if(`${args[0].url}`.startsWith(fetchSkips[i])){
+          return new Response('');
         }
       }
     }
