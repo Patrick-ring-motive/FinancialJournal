@@ -5,8 +5,8 @@ globalThis.fetchRedirects=[
 if(!globalThis.nativeFetch){
   globalThis.nativeFetch=globalThis.fetch;
   globalThis.fetch=async function(){
-    for(let i=0;i<fetchRedirects.length;i++){
-      let args = Array.from(arguments)
+    let args = Array.from(arguments)
+    for(let i=0;i<fetchRedirects.length;i++){    
       if(typeof args[0] == 'string'){
         if(args[0].startsWith(fetchRedirects[i][0])){
           args[0]=args[0].replace(fetchRedirects[i][0],fetchRedirects[i][1]);
