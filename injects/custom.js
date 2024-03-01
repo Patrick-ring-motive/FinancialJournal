@@ -11,7 +11,7 @@ void async function(){
         replaceProperty(document,'title', /wsj/gi,'Financial Journal');
       });
       design(()=>{
-        queryApplyAll('iframe[src*="td.doubleclick.net"],[id*="parsely"]',(el)=>{
+        queryApplyAll('iframe[src*="doubleclick.net"],[id*="parsely"]',(el)=>{
           el.remove();
         });
       });
