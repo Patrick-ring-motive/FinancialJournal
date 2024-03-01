@@ -1,3 +1,5 @@
+navigator.storeSendBeacon = navigator.sendBeacon;
+navigator.sendBeacon = ()=>true;
 globalThis.fetchRedirects=[
   ['https://api.wsj.net','https://api-financial.patrickring.net'],
   ['https://www.wsj.com','https://financial.patrickring.net'],
