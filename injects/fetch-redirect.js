@@ -5,7 +5,7 @@ globalThis.fetchRedirects=[
   ['https://www.wsj.com','https://financial.patrickring.net'],
   ['https://wsjstream.wsj.net','https://stream-financial.patrickring.net']
 ];
-globalThis.fetchSkips=["https://ct.pinterest.com"];
+globalThis.fetchSkips=["https://ct.pinterest.com",'https://wsjstream.wsj.net'];
 if(!globalThis.nativeFetch){
   globalThis.nativeFetch=globalThis.fetch;
   globalThis.fetch=async function(){
@@ -41,6 +41,13 @@ if(!XMLHttpRequest.prototype.nativeOpen){
   XMLHttpRequest.prototype.nativeOpen=XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open=function(){
     let args = Array.from(arguments);
+    for(let i=0;i<fetchSkips.length;i++){    
+      if(typeof args[1] == 'string'){
+        if(args[1].startsWith(fetchSkips[i])){
+          args[1]='';
+        }
+      }
+    }
     for(let i=0;i<fetchRedirects.length;i++){    
       if(typeof args[1] == 'string'){
         if(args[1].startsWith(fetchRedirects[i][0])){
