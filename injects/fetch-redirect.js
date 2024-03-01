@@ -5,7 +5,7 @@ globalThis.fetchRedirects=[
   ['https://www.wsj.com','https://financial.patrickring.net'],
   ['https://wsjstream.wsj.net','https://stream-financial.patrickring.net']
 ];
-globalThis.fetchSkips=["https://ct.pinterest.com",'https://wsjstream.wsj.net'];
+globalThis.fetchSkips=["https://ct.pinterest.com",'https://wsjstream.wsj.net','https://p1.parsely.com'];
 if(!globalThis.nativeFetch){
   globalThis.nativeFetch=globalThis.fetch;
   globalThis.fetch=async function(){
