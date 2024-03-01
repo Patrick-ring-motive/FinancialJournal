@@ -21,7 +21,7 @@ void async function LinkResolver(){
                           if (el[attr].includes('?')) {
                               c = '&';
                           }
-                          el.updateAttribute(attr, el[attr].replaceAll(host, location.host) + c + 'hostname=' + host);
+                          el.updateAttribute(attr, el[attr].replace(new RegExp(host,"gi"), location.host) + c + 'hostname=' + host);
                       } catch (e) {
                           console.log(e.message);
                       }
