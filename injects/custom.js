@@ -10,4 +10,9 @@ void async function(){
         replaceProperty(document,'title', /wallstreet journal/gi,'Financial Journal');
         replaceProperty(document,'title', /wsj/gi,'Financial Journal');
       });
+      design(()=>{
+        queryApplyAll('iframe[src*="td.doubleclick.net"]',(el)=>{
+          el.remove();
+        });
+      });
 }();
