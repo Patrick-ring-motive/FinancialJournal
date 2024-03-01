@@ -1,5 +1,5 @@
-if(!globalThis.fetch.nativeFetch){
-  globalThis.fetch.nativeFetch=globalThis.fetch;
+if(!globalThis.nativeFetch){
+  globalThis.nativeFetch=globalThis.fetch;
   globalThis.fetch=async function(){
     let args = Array.from(arguments)
     if(typeof args[0] == 'string'){
