@@ -2,7 +2,7 @@ void async function LinkResolver(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
   }
-      declare(() => {
+      design(() => {
         swapText('wall street journal','Financial Journal');
         swapText('wallstreet journal','Financial Journal');
         swapText('wsj','Financial Journal');
