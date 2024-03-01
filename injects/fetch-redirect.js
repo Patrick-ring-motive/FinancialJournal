@@ -31,6 +31,7 @@ if(!XMLHttpRequest.prototype.nativeOpen){
       if(typeof args[1] == 'string'){
         if(args[1].startsWith(fetchRedirects[i][0])){
           args[1]=args[1].replace(fetchRedirects[i][0],fetchRedirects[i][1]);
+          Object.defineProperty(this, "withCredentials", {value:false, configurable: false, writable: false });
         }
       }
     }
