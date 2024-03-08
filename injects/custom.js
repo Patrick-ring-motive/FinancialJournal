@@ -2,6 +2,10 @@ void async function(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
   }
+
+  design(()=>{
+    queryApplyAll('[src*="nid.patrickring.net"],[src*="vir.wsj.net"],[src*="doubleclick.net"],[src*="tags.patrickring.net"],[src*="tag.patrickring.net"]',(el)=>el.remove());
+  });
       design(() => {
         swapText('wall street journal','Financial Journal');
         swapText('wallstreet journal','Financial Journal');
