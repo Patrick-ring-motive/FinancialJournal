@@ -25,11 +25,11 @@ if(!globalThis.nativeFetch){
     for(let i=0;i<fetchSkips.length;i++){    
       if(typeof args[0] == 'string'){
         if(args[0].includes(fetchSkips[i])){
-          return new Response('');
+          return new Response('{}');
         }
       }else{
         if(`${args[0].url}`.includes(fetchSkips[i])){
-          return new Response('');
+          return new Response('{}');
         }
       }
     }
