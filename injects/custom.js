@@ -35,7 +35,8 @@ void async function(){
         },5000);
       });
       declare(()=>{
-        queryApplyAll(`[class*="WSJTheme--video"],
+        queryApplyAll(`[data-utility-nav-visible]
+                        [class*="WSJTheme--video"],
                         nav-hat,
                         aside,
                         a[rel="noreferrer"][href*="/tips"],
