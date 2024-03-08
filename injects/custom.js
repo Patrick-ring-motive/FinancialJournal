@@ -21,7 +21,8 @@ void async function(){
         },5000);
       });
       declare(()=>{
-        queryApplyAll(`nav-hat,
+        queryApplyAll(`[class*="WSJTheme--video"],
+                        nav-hat,
                         aside,
                         a[rel="noreferrer"][href*="/tips"],
                         .uds-ad-container,
