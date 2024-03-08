@@ -34,11 +34,11 @@ void async function(){
         replaceProperty(document,'title', /wallstreet journal/gi,'Financial Journal');
         replaceProperty(document,'title', /wsj/gi,'Financial Journal');
       });
-      design(()=>{
+      /*design(()=>{
         queryApplyAll('iframe[src*="doubleclick.net"],[id*="parsely"]',(el)=>{
           el.remove();
         });
-      });
+      });*/
       DOMInteractive(()=>{
         setTimeout(()=>{
           window.stop();
