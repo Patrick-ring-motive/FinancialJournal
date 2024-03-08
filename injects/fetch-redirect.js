@@ -6,7 +6,7 @@ globalThis.fetchRedirects=[
   ['https://wsjstream.wsj.net','https://stream-financial.patrickring.net']
 ];//nid.patrickring.net"],[src*="vir.wsj.net"],[src*="doubleclick.net"],[src*="tags.patrickring.net"],[src*="tag.patrickring.net
 globalThis.fetchSkips=["https://ct.pinterest.com",'https://wsjstream.wsj.net','https://p1.parsely.com','adobe_mc','doubleclick.net',
-                      "nid.patrickring.net","vir.wsj.net","tags.patrickring.net","tag.patrickring.net"];
+                      "nid.patrickring.net","vir.wsj.net","tags.patrickring.net","tag.patrickring.net","news.google.com"];
 if(!globalThis.nativeFetch){
   globalThis.nativeFetch=globalThis.fetch;
   globalThis.fetch=async function(){
