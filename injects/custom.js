@@ -4,7 +4,14 @@ void async function(){
   }
 
   design(()=>{
-    queryApplyAll('[src*="wsjstream.wsj.net"],[src*="nid.patrickring.net"],[src*="vir.wsj.net"],[src*="doubleclick.net"],[src*="tags.patrickring.net"],[src*="tag.patrickring.net"]',(el)=>el.remove());
+    queryApplyAll(`[src*="wsjstream.wsj.net"],
+    [src*="nid.patrickring.net"],
+    [src*="vir.wsj.net"],
+    [src*="doubleclick.net"],
+    [src*="tags.patrickring.net"],
+    [src*="tag.patrickring.net"],
+    [src*="news.google.com"]`
+    ,(el)=>el.remove());
   });
       design(() => {
         swapText('wall street journal','Financial Journal');
