@@ -1,3 +1,4 @@
+globalThis.console.error=console.log;
 void async function(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
