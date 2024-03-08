@@ -44,7 +44,7 @@ void async function(){
           window.stop();
         },5000);
       });
-      declare(()=>{
+   /*   declare(()=>{
         queryApplyAll(`[data-utility-nav-visible]
                         [class*="WSJTheme--video"],
                         nav-hat,
@@ -140,5 +140,5 @@ void async function(){
                         parsererror,
                         parsererror>div,
                         parsererror>h3`,el=>el.remove());
-      });
+      });*/
 }();
