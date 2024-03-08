@@ -1,4 +1,6 @@
 globalThis.console.error=console.log;
+globalThis.console.warn=console.log;
+globalThis.Promise.reject=Promise.resolve;
 void async function(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
