@@ -99,6 +99,8 @@ h2[class*="WSJTheme--hover-silver-gray"]
   
 }
 
+
+[id^="video"],
 [data-utility-nav-visible],
 [class*="WSJTheme--video"],
 nav-hat,
