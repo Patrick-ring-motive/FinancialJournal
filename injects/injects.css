@@ -11,7 +11,8 @@
 }
 
 svg,img,video{
-  border-radius:1vmin;
+  border-radius:1vmax;
+  padding:0;
 }
 
 *
