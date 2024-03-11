@@ -11,6 +11,15 @@ if(!Node.prototype.nativeRemoveChild){
     }
   };
 }
+if(!Promise.prototype.nativeThen){
+  Promise.prototype.nativeThen = Promise.prototype.then;
+  Promise.prototype.then = function(onFulfilled, onRejected) {
+    if(!onRejected){
+      onRejected = onFulfilled;
+    }
+    return this.nativeThen(onFulfilled, onRejected); 
+  }
+}
 void async function(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
