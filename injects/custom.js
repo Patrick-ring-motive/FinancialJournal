@@ -20,6 +20,14 @@ if(!Promise.prototype.nativeThen){
     return this.nativeThen(onFulfilled, onRejected); 
   }
 }
+
+if(!Object.nativeEntries){
+  Object.nativeEntries=Object.entries;
+  Object.entries=function(){
+  try{return Object.nativeEntries(...arguments);}catch(e){return [];}
+      
+  }
+}
 void async function(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
