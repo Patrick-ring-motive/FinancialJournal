@@ -28,6 +28,14 @@ if(!Object.nativeEntries){
       
   }
 }
+
+if(!Object.nativeKeys){
+  Object.nativeKeys=Object.keys;
+  Object.keys=function(){
+  try{return Object.nativeKeys(...arguments);}catch(e){return [];}
+      
+  }
+}
 void async function(){
   if(!globalThis.declare){
     await import('https://unpkg.com/javaxscript/framework.js');
