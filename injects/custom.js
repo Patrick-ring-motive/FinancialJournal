@@ -25,8 +25,8 @@ void async function(){
     await import('https://unpkg.com/javaxscript/framework.js');
   }
 
-  design(()=>{
-    /*queryApplyAll(`[src*="wsjstream.wsj.net"],
+  /*design(()=>{
+    queryApplyAll(`[src*="wsjstream.wsj.net"],
     [src*="nid.patrickring.net"],
     [src*="vir.wsj.net"],
     [src*="doubleclick.net"],
