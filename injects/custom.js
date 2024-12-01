@@ -1,45 +1,49 @@
-globalThis.console.error=console.log;
-globalThis.console.warn=console.log;
-globalThis.Promise.reject=Promise.resolve;
-if(!Node.prototype.nativeRemoveChild){
-  Node.prototype.nativeRemoveChild=Node.prototype.removeChild;
-  Node.prototype.removeChild=function(n){
+globalThis.console.error = console.warn;
+globalThis.Promise.reject = Promise.resolve;
+if(!Node.prototype['&removeChild']){
+  Node.prototype['&removeChild'] = Node.prototype.removeChild;
+  Node.prototype.removeChild = function removeChild(n){
     try{
-      return this.nativeRemoveChild(n);
+      return this['&removeChild'](n);
     }catch(e){
+      console.warn(e,...arguments);
       return this;
     }
   };
 }
-if(!Promise.prototype.nativeThen){
-  Promise.prototype.nativeThen = Promise.prototype.then;
-  Promise.prototype.then = function(onFulfilled, onRejected) {
-    if(!onRejected){
-      onRejected = onFulfilled;
-    }
-    return this.nativeThen(onFulfilled, onRejected); 
+if(!Promise.prototype['&then']){
+  Promise.prototype['&then'] = Promise.prototype.then;
+  Promise.prototype.then = function then(onFulfilled, onRejected) {
+    onRejected ??= onFulfilled;
+    return this['&then'](onFulfilled, onRejected); 
   }
 }
 
-if(!Object.nativeEntries){
-  Object.nativeEntries=Object.entries;
-  Object.entries=function(){
-  try{return Object.nativeEntries(...arguments);}catch(e){return [];}
-      
+if(!Object['&entries']){
+  Object['&entries'] = Object.entries;
+  Object.entries = function entries(){
+  try{
+    return Object['&entries'](...arguments);
+  }catch(e){
+    console.warn(e,...arguments);
+    return [];
+  }
   }
 }
 
-if(!Object.nativeKeys){
-  Object.nativeKeys=Object.keys;
-  Object.keys=function(){
-  try{return Object.nativeKeys(...arguments);}catch(e){return [];}
-      
+if(!Object['&keys']){
+  Object['&keys'] = Object.keys;
+  Object.keys = function keys(){
+  try{
+    return Object['&keys'](...arguments);
+  }catch(e){
+    console.warn(e,...arguments);
+    return [];
+  }
   }
 }
 void async function(){
-  if(!globalThis.declare){
-    await import('https://unpkg.com/javaxscript/framework.js');
-  }
+  globalThis.declare ?? await import('https://unpkg.com/javaxscript/framework.js');
 
   /*design(()=>{
     queryApplyAll(`[src*="wsjstream.wsj.net"],
